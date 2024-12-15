@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Ma'am</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffd700, #ffecb3, #e5c100);
+      background-size: 400% 400%;
+      animation: shimmer 6s infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .container {
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(145deg, #f8b400, #ffda79);
+      border-radius: 20px;
+      box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2), -5px -5px 15px rgba(255, 255, 255, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .heart {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      transform: rotate(-45deg) scale(0); /* Start small */
+      animation: open 1s ease-out forwards, pump 1s infinite ease-in-out 1s;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      border-radius: 50%;
+    }
+
+    .heart:before {
+      top: -50px;
+      left: 0;
+    }
+
+    .heart:after {
+      top: 0;
+      left: 50px;
+    }
+
+    /* Animation for opening the heart */
+    @keyframes open {
+      0% {
+        transform: rotate(-45deg) scale(0);
+      }
+      100% {
+        transform: rotate(-45deg) scale(1);
+      }
+    }
+
+    /* Pumping animation */
+    @keyframes pump {
+      0%, 100% {
+        transform: rotate(-45deg) scale(1);
+      }
+      50% {
+        transform: rotate(-45deg) scale(1.2);
+      }
+    }
+
+    .message {
+      position: absolute;
+      bottom: 20px;
+      color: green;
+      font-size: 18px;
+      font-weight: bold;
+      opacity: 0;
+      animation: fadeIn 2s ease-in-out 1.5s forwards;
+    }
+
+    /* Fade-in animation for the message */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="heart"></div>
+    <div class="message">I love you Nati</div>
+  </div>
+
+  <script>
+    // Optional: Additional JavaScript interactions or sound effects can be added here
+  </script>
+</body>
+</html>
